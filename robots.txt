@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auratech.co.il/sitemap.xml
