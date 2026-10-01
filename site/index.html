@@ -366,16 +366,14 @@ details[open] .faq-plus{transform:rotate(45deg)}
 <span style="display: flex; gap: 10px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F4EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>מעלה השחרור 9, חיפה</span>
 </div>
 </div>
-<form name="demo" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company-website" aria-label="טופס תיאום הדגמה" style="display: flex; flex-direction: column; gap: 14px; background: #F6F4EE; color: #101A28; border-radius: 18px; padding: 24px">
-<input type="hidden" name="form-name" value="demo">
-<p style="display:none"><label>השאירו ריק<input name="company-website"></label></p>
+<form id="demo-form" novalidate aria-label="טופס תיאום הדגמה" style="display: flex; flex-direction: column; gap: 14px; background: #F6F4EE; color: #101A28; border-radius: 18px; padding: 24px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px">
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">שם מלא<input type="text" name="name" autocomplete="name" required="required" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">טלפון<input type="tel" name="phone" autocomplete="tel" required="required" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">שם מלא<input type="text" name="name" id="f-name" autocomplete="name" required="required" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">טלפון<input type="tel" name="phone" id="f-phone" autocomplete="tel" required="required" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px; box-sizing: border-box"></label>
 </div>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">שם העסק<input type="text" name="business" autocomplete="organization" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">שם העסק<input type="text" name="business" id="f-business" autocomplete="organization" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px; box-sizing: border-box"></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">סוג העסק
-<select name="type" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px">
+<select name="type" id="f-type" style="font: inherit; font-weight: 400; padding: 12px; border: 1px solid #A39C8C; border-radius: 10px; background: #FFFFFF; min-height: 44px">
 <option>מסעדה / בית קפה</option>
 <option>מזון מהיר</option>
 <option>מינימרקט / סופר</option>
@@ -387,7 +385,8 @@ details[open] .faq-plus{transform:rotate(45deg)}
 <option>עצמאי / קבלן — חשבוניות בלבד</option>
 </select>
 </label>
-<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #3A4352"><input type="checkbox" name="consent" required="required" style="width: 20px; height: 20px; margin: 2px 0 0; flex-shrink: 0"><span>אני מאשר/ת שהפרטים ישמשו ליצירת קשר בנוגע להדגמה, בהתאם ל<a href="/privacy/">מדיניות הפרטיות</a>. לא נשלח דיוור שיווקי ללא הסכמה נפרדת.</span></label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #3A4352"><input type="checkbox" name="consent" id="f-consent" required="required" style="width: 20px; height: 20px; margin: 2px 0 0; flex-shrink: 0"><span>אני מאשר/ת שהפרטים ישמשו ליצירת קשר בנוגע להדגמה, בהתאם ל<a href="privacy/">מדיניות הפרטיות</a>. לא נשלח דיוור שיווקי ללא הסכמה נפרדת.</span></label>
+<p id="form-msg" role="status" hidden style="margin:0;font-size:15px;line-height:1.5"></p>
 <button type="submit" style="font: inherit; font-weight: 700; font-size: 17px; background: #F2A516; color: #101A28; border: none; border-radius: 12px; padding: 14px; min-height: 48px; cursor: pointer">שלחו ונחזור אליכם</button>
 </form>
 </div>
@@ -401,9 +400,9 @@ details[open] .faq-plus{transform:rotate(45deg)}
 <span>מעלה השחרור 9, חיפה · 074-7323103</span>
 </div>
 <nav aria-label="קישורים משפטיים" style="display: flex; flex-wrap: wrap; gap: 18px; align-items: center">
-<a href="/privacy/">מדיניות פרטיות</a>
-<a href="/terms/">תנאי שימוש</a>
-<a href="/accessibility/">הצהרת נגישות</a>
+<a href="privacy/">מדיניות פרטיות</a>
+<a href="terms/">תנאי שימוש</a>
+<a href="accessibility/">הצהרת נגישות</a>
 <a href="https://www.facebook.com/share/1CLj9Z3hoA/">פייסבוק</a>
 <a href="https://www.instagram.com/auraservicesil">אינסטגרם</a>
 </nav>
@@ -412,5 +411,24 @@ details[open] .faq-plus{transform:rotate(45deg)}
 </footer>
 
 </div>
+<script>
+(function(){
+  var form=document.getElementById("demo-form"), msg=document.getElementById("form-msg");
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var v=function(id){return document.getElementById(id).value.trim();};
+    msg.hidden=false; msg.style.color="#8A1C1C";
+    if(!v("f-name")||!v("f-phone")){msg.textContent="נא למלא שם וטלפון כדי שנוכל לחזור אליכם.";return;}
+    if(!document.getElementById("f-consent").checked){msg.textContent="נא לאשר את השימוש בפרטים לפי מדיניות הפרטיות.";return;}
+    var text="שלום, אשמח להדגמה של אורה.\nשם: "+v("f-name")+"\nטלפון: "+v("f-phone")+(v("f-business")?"\nעסק: "+v("f-business"):"")+"\nסוג העסק: "+document.getElementById("f-type").value;
+    var url="https://wa.me/972747323103?text="+encodeURIComponent(text);
+    msg.style.color="#101A28"; msg.textContent="";
+    msg.appendChild(document.createTextNode("הפרטים מוכנים. לחצו לשליחה בוואטסאפ: "));
+    var a=document.createElement("a"); a.href=url; a.target="_blank"; a.rel="noopener"; a.textContent="שליחה בוואטסאפ"; a.style.fontWeight="700";
+    msg.appendChild(a); msg.appendChild(document.createTextNode(" או התקשרו ל-074-7323103."));
+    window.open(url,"_blank","noopener");
+  });
+})();
+</script>
 </body>
 </html>
