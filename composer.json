@@ -1,0 +1,22 @@
+{
+    "name": "auratech/smart-dashboard",
+    "description": "Smart, customizable, business-type aware dashboard module for the AuraTech POS/ERP (Laravel).",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [{ "name": "AuraTech" }],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/database": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/http": "^9.0|^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": { "AuraTech\\SmartDashboard\\": "src/" }
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["AuraTech\\SmartDashboard\\SmartDashboardServiceProvider"]
+        }
+    },
+    "minimum-stability": "stable"
+}
